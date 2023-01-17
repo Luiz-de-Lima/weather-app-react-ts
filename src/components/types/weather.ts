@@ -1,6 +1,6 @@
 export type WeatherProps = {
   city: string;
-  cod?: string;
+  cod?: string | number;
   countryElement: string;
   desc: string;
   humidity: string;

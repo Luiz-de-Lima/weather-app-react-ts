@@ -17,7 +17,7 @@ export const Weather = () => {
     setInputContent(e.target.value);
   };
   const getWeather = async (city: string) => {
-    if (inputContent !== "") {
+    if (inputContent) {
       try {
         let json = await api.requestWeather(city);
         setWeather({
@@ -30,12 +30,11 @@ export const Weather = () => {
           wind: json.wind.speed,
           countryElement: json.sys.country,
         });
-        setInputContent("");
       } catch (error) {
-        setError(
+        alert(
           "Não foi possivel encontrar o clima de uma cidade com este nome."
         );
-        setInputContent("");
+        setError("cidade não existe");
       }
     } else {
       alert("Digite uma cidade");
@@ -60,10 +59,12 @@ export const Weather = () => {
       >
         <FaSearch />
       </button>
-      {weather && (
+      {weather ? (
         <>
-          <WeatherData data={weather} erro={erro} />
+          <WeatherData data={weather} />
         </>
+      ) : (
+        <p>{erro}</p>
       )}
     </div>
   );

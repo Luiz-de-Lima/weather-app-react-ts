@@ -6,9 +6,7 @@ export const api = {
     const BASE_URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}&lang=pt_br`;
 
     let response = await axios.get(BASE_URL);
-    if (response.data.cod === "404") {
-      console.log("ruim");
-    }
+    
     return response.data;
   },
 };

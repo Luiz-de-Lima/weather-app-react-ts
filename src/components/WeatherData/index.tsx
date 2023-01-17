@@ -4,15 +4,12 @@ import { FaMapMarkerAlt, FaWind } from "react-icons/fa";
 import { WeatherProps } from "../types/weather";
 interface weatherDataProps {
   data: WeatherProps;
-  erro: string;
 }
-export const WeatherData = ({ data, erro }: weatherDataProps) => {
-  const [error, setError] = useState(erro);
+export const WeatherData = ({ data }: weatherDataProps) => {
   return (
     <>
-      {data.cod !== "200" ? (
+      {data && (
         <>
-          {" "}
           <div className="weather-data">
             <h4>
               <i>
@@ -56,8 +53,6 @@ export const WeatherData = ({ data, erro }: weatherDataProps) => {
             </p>
           </div>
         </>
-      ) : (
-        <span>{erro}</span>
       )}
     </>
   );
