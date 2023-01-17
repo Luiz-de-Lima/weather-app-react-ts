@@ -4,77 +4,85 @@
   width: 428px;
   height: 450px;
   padding: 2rem;
+  text-align: center;
 
   .container__place {
     font-size: 1.5rem;
   }
-  .container-search_input {
-    border: none;
-    border-radius: 6.5rem;
-    background-color: #ffffff;
-    color: #005c97;
-    padding: 0.5rem;
-    font-size: 1.1rem;
+  @media screen and (max-width: 768px) {
+    width: 100%;
+    max-width: 350px;
+    height: 100%;
+  }
+  .container__place {
+    font-size: 1rem;
     margin-bottom: 1rem;
-    &::placeholder {
-      color: #005c97;
-      text-align: center;
-    }
   }
-  .container-search_button {
-    border: none;
-    border-radius: 0.5rem;
-    padding: 0.5rem;
-    background-color: #ffb200;
+}
+.container-search_input {
+  border: none;
+  border-radius: 6.5rem;
+  background-color: #ffffff;
+  color: #005c97;
+  padding: 0.5rem;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  &::placeholder {
     color: #005c97;
-    font-weight: 700;
-    cursor: pointer;
-    &:hover {
-      filter: brightness(1.1);
-    }
+    text-align: center;
   }
-  .weather-data {
-    h4 {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    span {
-      margin: 0.4rem;
-    }
-    .weather-data_flag_country {
-      height: 16px;
-    }
-    .weather-data_temperature {
-      font-weight: bold;
-      text-transform: capitalize;
-    }
+}
+.container-search_button {
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: #ffb200;
+  color: #005c97;
+  font-weight: 700;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  &:hover {
+    filter: brightness(1.1);
   }
-  .weather-data__description {
+}
+.weather-data {
+  h4 {
     display: flex;
     justify-content: center;
     align-items: center;
-    p {
-      font-weight: bold;
-      text-transform: capitalize;
-    }
+    margin-bottom: 0.6rem;
   }
   span {
     margin: 0.4rem;
   }
-  .weather-data__details {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .humidity {
-      border-right: 0.1rem solid #ffffff;
-      margin: 0 0.6rem;
-      padding: 0.6rem;
-    }
+  .weather-data_flag_country {
+    height: 16px;
+  }
+  .weather-data_temperature {
+    font-weight: bold;
+    text-transform: capitalize;
   }
 }
-.error {
-  font-weight: bold;
-  font-size: 1rem;
+.weather-data__description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  p {
+    font-weight: bold;
+    text-transform: capitalize;
+  }
+}
+span {
+  margin: 0.4rem;
+}
+.weather-data__details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .humidity {
+    border-right: 0.1rem solid #ffffff;
+    margin: 0 0.6rem;
+    padding: 0.6rem;
+  }
 }

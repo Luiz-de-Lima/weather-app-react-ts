@@ -1,8 +1,18 @@
-.title {
-  font-size: 9.37rem;
-  font-weight: 700;
-  color: #000000;
-  .span-title {
-    color: #ffb200;
+header {
+  .title {
+    font-size: 5rem;
+    font-weight: 700;
+    color: #000000;
+    text-align: center;
+    margin: 2rem 0;
+    .span-title {
+      color: #ffb200;
+    }
+  }
+  @media screen and (max-width: 820px) {
+    width: 100%;
+    .title {
+      font-size: 3.18rem;
+    }
   }
 }
