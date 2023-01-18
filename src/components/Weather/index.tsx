@@ -1,17 +1,13 @@
 import React, { useState } from "react";
-import { FaWind, FaMapMarkerAlt, FaSearch } from "react-icons/fa";
-import { BsMoisture, BsDropletFill } from "react-icons/bs";
+import { FaSearch } from "react-icons/fa";
 import { WeatherProps } from "../types/weather";
+import { WeatherData } from "../WeatherData";
 import { api } from "../../api";
 import "./styles.scss";
-import { WeatherData } from "../WeatherData";
 
 export const Weather = () => {
-  const apiCountry = "https://countryflagsapi.com/png/";
-
   const [weather, setWeather] = useState<WeatherProps>();
   const [inputContent, setInputContent] = useState("");
-  const [erro, setError] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInputContent(e.target.value);
@@ -34,7 +30,6 @@ export const Weather = () => {
         alert(
           "Não foi possivel encontrar o clima de uma cidade com este nome."
         );
-        setError("cidade não existe");
       }
     } else {
       alert("Digite uma cidade");
@@ -59,12 +54,10 @@ export const Weather = () => {
       >
         <FaSearch />
       </button>
-      {weather ? (
+      {weather && (
         <>
           <WeatherData data={weather} />
         </>
-      ) : (
-        <p>{erro}</p>
       )}
     </div>
   );
